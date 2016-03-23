@@ -47,9 +47,10 @@ var vr=function(a,b){
 vr(d,f);
 //数组的常用方法
 //字符串的常用方法
+
 function vr(){
-	var this.a="a";
-	var this.b=function(){
+	 this.a="a";
+	 this.b=function(){
 
 	}
 }
@@ -60,3 +61,35 @@ var vr=new vr();
 vr.console();
 ```
 *针对特定用途的部分
+>当js来浏览器运行的那一刻
+>浏览器会创建一个window对象
+>window对象中很多属性和方法
+>这些属性和方法不用加 window.就可以使用
+setInterval();
+###选取元素
+*var el=document.getElementById();
+*var el=document.getElementsByClassName();
+*var el=document.getElementsByTagName();
+*var el=document.getElementByName();
+
+
+###筛选元素
+*el.parentNode;
+*el.firstChild;
+*el.nodeChilds;
+*el.
+
+###操作样式
+*el.style.color="red";
+*el.
+###获取位置信息
+
+###操作属性
+###节点操作
+###其他
+
+
+
+
+
+
