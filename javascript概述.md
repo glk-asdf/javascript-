@@ -66,26 +66,34 @@ vr.console();
 >window对象中很多属性和方法
 >这些属性和方法不用加 window.就可以使用
 setInterval();
+
+dom对象 dom
 ###选取元素
 *var el=document.getElementById();
 *var el=document.getElementsByClassName();
 *var el=document.getElementsByTagName();
-*var el=document.getElementByName();
+*var el=document.getElementsByName();
 
 
 ###筛选元素
 *el.parentNode;
 *el.firstChild;
 *el.nodeChilds;
-*el.
+*el.lastChild;
 
 ###操作样式
 *el.style.color="red";
 *el.
 ###获取位置信息
+*document.documentElement.clinkX;
+*document.documentElement.clinkY;
+*document.documentElement.screenX;
+*document.documentElement.screenY;
 
 ###操作属性
+*
 ###节点操作
+*
 ###其他
 
 
