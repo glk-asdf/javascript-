@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.zong{
+			width: 500px;
+			height: 500px;
+			margin: 50px auto;
+			border:1px solid black;
+			position: relative;
+		}
+		.xiao{
+			display: block;
+			width: 50px;
+			height: 50px;
+			list-style: none;
+			border:1px solid black;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		.span{
+			display: block;
+			float: left;
+			width: 50px;
+			height: 50px;
+			border:1px solid black;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}		
+		
+	</style>
+
+
+</head>
+<body>
+	<div class="zong"></div>
+	<ul>
+		<li tabc="tn">通过tagname获取</li>
+		<li tabc="cn">通过classname获取</li>
+		<li tabc="id">通过id获取</li>
+		<li tabc="qs">通过querySelector获取</li>
+		<li tabc="qsa">通过querySelctorAll获取</li>
+	</ul>
+</body>
+<script type="text/javascript">
+// var zong=document.getElementsByClassName("zong")
+var zong=document.querySelector(".zong");
+
+var buju=function(){
+	var rm=Math.floor(Math.random()*10);
+	for (var i = 0,el; i < 10; i++) {
+		el=document.createElement((i==rm)?"span":"li");
+		zong.appendChild(el);	
+		if (i==rm) {
+			el.className="span";
+			el.id="span";
+			el.style.left=Math.random()*(zong.offsetWidth-el.offsetWidth)+"px";
+			el.style.top=Math.random()*(zong.offsetHeight-el.offsetHeight)+"px";
+		}else{
+			el.className="xiao";
+			el.style.left=Math.random()*(zong.offsetWidth-el.offsetWidth)+"px";
+			el.style.top=Math.random()*(zong.offsetHeight-el.offsetHeight)+"px";
+		}
+	};
+}
+buju();
+var ul=zong.nextElementSibling.children;
+for (var i = 0; i < ul.length; i++) {
+	ul[i].onclick=function(){
+		var tabc=this.getAttribute("tabc");
+		switch(tabc){
+			case("tn"):
+			var el=zong.getElementsByTagName("span")[0];
+			break;
+			case("cn"):
+			 el=zong.getElementsByClassName("span")[0];
+			break;
+			case("id"):
+			 el=zong.getElementById("span");
+			break;
+			case("qs"):
+			 el=zong.querySelector(".span");
+			break;
+			case("qsa"):
+			 el=zong.querySelectorAll(".span")[0];
+			break;
+		}
+		el.style.background="#df0094";
+		setTimeout(function(){
+			el.style.background="#fff";
+			while(zong.firstElementChild){
+				zong.removeChild(zong.firstElementChild)
+			}
+			buju();
+		},100)
+
+	}
+};
+</script>
+</html>
